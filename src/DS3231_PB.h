@@ -1,8 +1,14 @@
-#include "DS3231.h"
-
 #ifndef DS3231_PB_h
 #define DS3231_PB_h
 
+#include "DS3231.h"
+#include <Wire.h>
+
+#if ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
 
 #define DS3231_REG_TIME_SEC         (0x00)
 #define DS3231_REG_TIME_MIN         (0x01)
