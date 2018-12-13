@@ -8,8 +8,7 @@
 
 TM1637Display display(CLK, DIO);
 
-DS3231 clock;
-RTCTime t;
+DS3231_PB clock;
 
 void setup() {
    

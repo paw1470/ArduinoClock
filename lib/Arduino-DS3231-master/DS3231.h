@@ -129,7 +129,7 @@ class DS3231
 	char* dateFormat(const char* dateFormat, RTCDateTime dt);
 	char* dateFormat(const char* dateFormat, RTCAlarmTime dt);
 
-    private:
+    protected:
 	RTCDateTime t;
 
 	char *strDayOfWeek(uint8_t dayOfWeek);
@@ -154,5 +154,4 @@ class DS3231
 	void writeRegister8(uint8_t reg, uint8_t value);
 	uint8_t readRegister8(uint8_t reg);
 };
-
 #endif
