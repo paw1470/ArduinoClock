@@ -87,7 +87,7 @@ void DS3231_PB::setEachSecondInteruption(void){
 }
 
 
-RTCTimeShort DS3231_PB::getTimeShort(void){
+RTCTimeHMS DS3231_PB::getTimeShort(void){
     int values[3];
 
     Wire.beginTransmission(DS3231_ADDRESS);

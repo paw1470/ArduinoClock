@@ -18,7 +18,7 @@
 #define DS3231_REG_TIME_MONTH       (0x05)
 #define DS3231_REG_TIME_YEAR        (0x06)
 
-struct RTCTimeShort
+struct RTCTimeHMS
 {
     uint8_t hour;
     uint8_t minute;
@@ -45,7 +45,7 @@ class DS3231_PB : public DS3231{
 
         void setEachSecondInteruption(void);
 
-        RTCTimeShort getTimeShort(void);
+        RTCTimeHMS getTimeShort(void);
 
         //dont like orginal names
         void setSquareWaveFreq(DS3231_sqw_t freq);
@@ -55,6 +55,6 @@ class DS3231_PB : public DS3231{
         void forceTemperatureConversion(void);
 
         private:
-        RTCTimeShort tShort;
+        RTCTimeHMS tShort;
 };
 #endif 
