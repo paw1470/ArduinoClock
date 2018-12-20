@@ -14,7 +14,6 @@ struct alarm{
 };
 
 
-
 class ClockController{
     public:
         ClockController();
@@ -27,7 +26,11 @@ class ClockController{
         void showHour();
         void showMinute();
         void showSecond();
-        
+
+        uint8_t getHour();
+        uint8_t getMinute();
+        uint8_t getSecond();
+
         void incrementHour();
         void incrementMinute();
         void incrementSecond();
@@ -41,14 +44,15 @@ class ClockController{
         void decrementAlarmHour(uint8_t id);
         void decrementAlarmMinute(uint8_t id);
         void decrementAlarmSecond(uint8_t id);
-        void switchOn(uint8_t id);
-        void switchOff(uint8_t id);
+        void switchAlarm(uint8_t id);
 
         void checkAlarms();
         void resetAlarms();
 
         
     private:
+        RTCTimeHMS time;
+        uint8_t *rawText = new uint8_t[4]; 
         uint8_t lastAlarmDate;
         DS3231_PB clock;
 };
